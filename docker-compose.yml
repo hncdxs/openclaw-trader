@@ -19,6 +19,8 @@ services:
     environment:
       - TZ=Asia/Shanghai
       - OPENCLAW_PROFILE=production
+      - OPENCLAW_GATEWAY_TOKEN=trader123
+    command: ["openclaw", "gateway", "--allow-unconfigured", "--port", "18789", "--token", "trader123", "--bind", "lan"]
     networks:
       - trader-net
 

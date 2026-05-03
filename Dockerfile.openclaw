@@ -15,5 +15,5 @@ RUN mkdir -p /root/.openclaw/workspace/skills
 # 暴露 Gateway 端口
 EXPOSE 18789
 
-# 默认启动 Gateway
-CMD ["openclaw", "gateway", "--port", "18789", "--verbose"]
+# 默认启动 Gateway（会被 docker-compose command 覆盖）
+CMD ["openclaw", "gateway", "--port", "18789"]

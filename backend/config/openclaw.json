@@ -1,38 +1,16 @@
 {
-  "agent": {
-    "model": "minimax/m2.7",
-    "thinking": "high"
-  },
-  "gateway": {
-    "port": 18789,
-    "verbose": true
-  },
-  "providers": {
-    "minimax": {
-      "base_url": "https://api.minimaxi.com/v1",
-      "api_key": "${MINIMAX_API_KEY}"
+  // OpenClaw 配置
+  agents: {
+    defaults: {
+      workspace: "/root/.openclaw/workspace"
     }
   },
-  "mcp_servers": {
-    "okx": {
-      "transport": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@okx/ai-trade-kit@latest",
-        "mcp",
-        "--api-key", "${OKX_API_KEY}",
-        "--secret-key", "${OKX_SECRET_KEY}",
-        "--passphrase", "${OKX_PASSPHRASE}"
-      ]
-    }
+  gateway: {
+    mode: "local",
+    port: 18789
   },
-  "tools": {
-    "allow": ["*"]
-  },
-  "agents": {
-    "defaults": {
-      "workspace": "/root/.openclaw/workspace"
-    }
+  meta: {
+    lastTouchedVersion: "2026.5.2",
+    lastTouchedAt: "2026-05-03T05:18:57.995Z"
   }
 }
