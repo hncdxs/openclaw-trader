@@ -1,0 +1,19 @@
+# 🦞 OpenClaw Engine Dockerfile
+FROM node:24-alpine
+
+RUN apk add --no-cache git curl bash ca-certificates tzdata
+
+# 安装 pnpm
+RUN npm install -g pnpm@latest
+
+# 安装 OpenClaw
+RUN npm install -g openclaw@latest
+
+# 创建 OpenClaw 配置目录
+RUN mkdir -p /root/.openclaw/workspace/skills
+
+# 暴露 Gateway 端口
+EXPOSE 18789
+
+# 默认启动 Gateway
+CMD ["openclaw", "gateway", "--port", "18789", "--verbose"]
