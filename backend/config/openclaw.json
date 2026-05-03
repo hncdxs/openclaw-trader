@@ -9,6 +9,30 @@
     mode: "local",
     port: 18789
   },
+  providers: {
+    minimax: {
+      apiKey: {
+        ref: {
+          provider: "default",
+          source: "env",
+          id: "MINIMAX_API_KEY"
+        }
+      },
+      baseURL: "https://api.minimax.chat/v1"
+    }
+  },
+  model: "openai/minimax-m2.7",
+  mcpServers: {
+    "okx-mcp": {
+      command: "npx",
+      args: ["-y", "@okx/mcp-server"],
+      env: {
+        OKX_API_KEY: { ref: { provider: "default", source: "env", id: "OKX_API_KEY" } },
+        OKX_SECRET_KEY: { ref: { provider: "default", source: "env", id: "OKX_SECRET_KEY" } },
+        OKX_PASSPHRASE: { ref: { provider: "default", source: "env", id: "OKX_PASSPHRASE" } }
+      }
+    }
+  },
   meta: {
     lastTouchedVersion: "2026.5.2",
     lastTouchedAt: "2026-05-03T05:18:57.995Z"

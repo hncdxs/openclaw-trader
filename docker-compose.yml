@@ -14,8 +14,6 @@ services:
       - .env
     volumes:
       - openclaw_data:/root/.openclaw   # 持久化配置
-      - ./backend/skills:/root/.openclaw/workspace/skills  # 策略 skills
-      - ./backend/config/openclaw.json:/root/.openclaw/openclaw.json  # 配置
     environment:
       - TZ=Asia/Shanghai
       - OPENCLAW_PROFILE=production
