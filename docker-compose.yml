@@ -10,6 +10,8 @@ services:
     restart: unless-stopped
     ports:
       - "18789:18789"   # OpenClaw Gateway
+    env_file:
+      - .env
     volumes:
       - openclaw_data:/root/.openclaw   # 持久化配置
       - ./backend/skills:/root/.openclaw/workspace/skills  # 策略 skills
