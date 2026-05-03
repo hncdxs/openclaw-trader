@@ -23,9 +23,9 @@
   },
   model: "openai/minimax-m2.7",
   mcpServers: {
-    "okx-mcp": {
+    "okx-trade-mcp": {
       command: "npx",
-      args: ["-y", "@okx/mcp-server"],
+      args: ["-y", "@okx_ai/okx-trade-mcp"],
       env: {
         OKX_API_KEY: { ref: { provider: "default", source: "env", id: "OKX_API_KEY" } },
         OKX_SECRET_KEY: { ref: { provider: "default", source: "env", id: "OKX_SECRET_KEY" } },

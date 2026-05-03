@@ -18,8 +18,8 @@ COPY backend/config/openclaw.json /root/.openclaw/openclaw.json
 # 复制 skills
 COPY backend/skills /root/.openclaw/workspace/skills
 
-# 安装 OKX MCP Server
-RUN npm install -g @okx/mcp-server
+# 安装 OKX MCP Server（官方 OKX AI Trade Kit）
+RUN npm install -g @okx_ai/okx-trade-mcp@latest
 
 # 暴露 Gateway 端口
 EXPOSE 18789
